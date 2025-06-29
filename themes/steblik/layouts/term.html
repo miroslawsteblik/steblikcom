@@ -1,0 +1,45 @@
+{{ define "main" }}
+<div class="blog-page-container">
+  <h1>{{ .Title }}</h1>
+  <div class="blog-description">Posts tagged with "{{ .Data.Term }}"</div>
+  
+  <div class="blog-list-improved">
+    {{ $paginator := .Paginate .Pages (default 6 .Site.Params.postsPerPage) }}
+    {{ range $paginator.Pages }}
+        <div class="blog-item-card">
+          <div class="blog-item-content">
+            <h3 class="blog-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+            <div class="blog-date">{{ .Date.Format "January 2, 2006" }}</div>
+            <a href="{{ .RelPermalink }}" class="read-more-btn">Read more</a>
+          </div>
+          {{ if .Params.featured_image }}
+            <div class="blog-item-image">
+              <img src="{{ .Params.featured_image }}" alt="{{ .Title }}">
+            </div>
+          {{ end }}
+        </div>
+      {{ end }}
+    </div>
+    
+    <!-- Pagination -->
+    {{ if gt $paginator.TotalPages 1 }}
+    <div class="pagination">
+      {{ if $paginator.HasPrev }}
+        <a href="{{ $paginator.Prev.URL }}" class="pagination-item">&laquo; Previous</a>
+      {{ end }}
+      
+      {{ range $paginator.Pagers }}
+        {{ if eq . $paginator }}
+          <span class="pagination-item pagination-active">{{ .PageNumber }}</span>
+        {{ else }}
+          <a href="{{ .URL }}" class="pagination-item">{{ .PageNumber }}</a>
+        {{ end }}
+      {{ end }}
+      
+      {{ if $paginator.HasNext }}
+        <a href="{{ $paginator.Next.URL }}" class="pagination-item">Next &raquo;</a>
+      {{ end }}
+    </div>
+    {{ end }}
+</div>
+{{ end }}

@@ -1,0 +1,20 @@
+<div class="banner-container">
+  <img src="{{ site.Params.bannerImage }}" alt="Banner Image" class="banner-image">
+  <div class="header-content">
+    <div class="header-top">
+      <h1 class="site-title">{{ site.Title }}</h1>
+      <div class="header-top-right">
+        <div class="main-navigation">
+          {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+        </div>
+        <div class="header-social">
+          {{ range site.Menus.social }}
+            <a href="{{ .URL }}" target="_blank" rel="noopener" class="social-icon-link" title="{{ .Name }}">
+              <img src="/images/socials/{{ lower .Name }}-white.svg" alt="{{ .Name }}" class="social-icon">
+            </a>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

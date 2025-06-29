@@ -1,0 +1,18 @@
+{{ define "main" }}
+<div class="blog-page-container">
+  <h1>{{ .Title }}</h1>
+  <div class="blog-description">Browse posts by tags</div>
+  
+  <div class="tags-list">
+    {{ range .Pages }}
+      <div class="tag-item">
+        <h3 class="tag-title">
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          <span class="tag-count">({{ len .Pages }})</span>
+        </h3>
+        <div class="tag-description">{{ len .Pages }} post{{ if ne (len .Pages) 1 }}s{{ end }}</div>
+      </div>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

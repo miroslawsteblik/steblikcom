@@ -1,0 +1,10 @@
+<div class="footer-container">
+  <p class="copyright">Copyright © {{ now.Year }} Miroslaw Steblik. All rights reserved.</p>
+  <div class="footer-social">
+    {{ range site.Menus.social }}
+      <a href="{{ .URL }}" target="_blank" rel="noopener" class="social-icon-link" title="{{ .Name }}">
+        <img src="/images/socials/{{ lower .Name }}-white.svg" alt="{{ .Name }}" class="social-icon">
+      </a>
+    {{ end }}
+  </div>
+</div>

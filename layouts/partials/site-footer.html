@@ -1,8 +1,0 @@
-<footer class="fixed-footer w-100 pa3" role="contentinfo">
-  <div class="flex justify-between mw8 center ph3-ns">
-    <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="{{ .Site.Home.Permalink }}" >
-      &copy; {{ with .Site.Copyright | compare.Default .Site.Title }} {{ . | safe.HTML }} {{ now.Format "2006"}} {{ end }}
-    </a>
-    <div>{{ partials.IncludeCached "social/follow.html" . }}</div>
-  </div>
-</footer>
