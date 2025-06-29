@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pyt on Miroslaw Steblik</title>
+    <link>http://localhost:1313/tags/pyt/</link>
+    <description>Recent content in Pyt on Miroslaw Steblik</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 01 Jan 2025 10:58:08 -0400</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/pyt/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Chapter I: The Grand Hall</title>
+      <link>http://localhost:1313/posts/data_1/</link>
+      <pubDate>Wed, 01 Jan 2025 10:58:08 -0400</pubDate>
+      <guid>http://localhost:1313/posts/data_1/</guid>
+      <description>&lt;p&gt;Three hundred and forty-eight years, six months, and nineteen days ago&#xA;to-day, the Parisians awoke to the sound of all the bells in the triple&#xA;circuit of the city, the university, and the town ringing a full peal.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,73 @@
+baseURL = 'https://steblik.com/'
+languageCode = 'en-us'
+title = 'Miroslaw Steblik'
+theme = 'ananke'
+
+resourceDir = "../resources"
+
+DefaultContentLanguage = "en"
+SectionPagesMenu = "main"
+
+googleAnalytics = ""
+enableRobotsTXT = true
+
+[pagination]
+  pagerSize = 6  # Number of posts per page
+
+# section to allow raw HTML
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+# Alternatively, suppress this specific warning
+# ignoreLogs = ['warning-goldmark-raw-html']
+
+[languages]
+  [languages.en]
+    title = "Miroslaw Steblik"
+    weight = 1
+    contentDir = "content/en"
+  
+
+
+[sitemap]
+  changefreq = "monthly"
+  priority = 0.5
+  filename = "sitemap.xml"
+
+[params]
+  author = "Miroslaw Steblik"  # Add your name
+  favicon = "/images/favicon.ico" # Create and add a favicon
+  site_logo = "/images/logo.png"  # Add a custom logo if you have one
+  description = "Personal website of Miroslaw Steblik, a data engineer" 
+  background_color_class = "bg-dark-blue" 
+  recent_posts_number = 5  
+
+  # Enable syntax highlighting for code blocks
+  custom_css = ["_custom.css","_code.css", "social-icons.css", "_styles.css"]
+
+  # Adding featured image settings
+  featured_image = "/images/hero-background.jpg" # Default hero image
+
+  # Add Open Graph and Twitter card info
+  images = ["/images/site-feature-image.jpg"]
+  facebook_images = ["/images/facebook-sharing.jpg"]
+  twitter_card = "summary_large_image"
+
+  show_reading_time = false
+
+  # Social sharing settings inside params
+  [params.ananke.social.follow]
+    new_window_icon = false
+    networks = [
+      "linkedin",
+      "github",
+    ]
+
+  [params.ananke.social.linkedin]
+  username = "miroslawsteblik"
+
+  [params.ananke.social.github]
+  username = "miroslawsteblik"
+

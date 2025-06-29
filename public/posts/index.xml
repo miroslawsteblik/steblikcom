@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog on Miroslaw Steblik</title>
+    <link>http://localhost:1313/posts/</link>
+    <description>Recent content in Blog on Miroslaw Steblik</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 09 Jun 2025 10:58:08 -0400</lastBuildDate>
+    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>revenue-calculator</title>
+      <link>http://localhost:1313/posts/data_6/</link>
+      <pubDate>Mon, 09 Jun 2025 10:58:08 -0400</pubDate>
+      <guid>http://localhost:1313/posts/data_6/</guid>
+      <description>&lt;p&gt;Three hundred and forty-eight years, six months, and nineteen days ago&#xA;to-day, the Parisians awoke to the sound of all the bells in the triple&#xA;circuit of the city, the university, and the town ringing a full peal.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>CTE functions and DBT</title>
+      <link>http://localhost:1313/posts/data_5/</link>
+      <pubDate>Fri, 09 May 2025 10:58:08 -0400</pubDate>
+      <guid>http://localhost:1313/posts/data_5/</guid>
+      <description>&lt;p&gt;Three hundred and forty-eight years, six months, and nineteen days ago&#xA;to-day, the Parisians awoke to the sound of all the bells in the triple&#xA;circuit of the city, the university, and the town ringing a full peal.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Pandas</title>
+      <link>http://localhost:1313/posts/data_8/</link>
+      <pubDate>Wed, 09 Apr 2025 10:58:08 -0400</pubDate>
+      <guid>http://localhost:1313/posts/data_8/</guid>
+      <description>&lt;p&gt;Three hundred and forty-eight years, six months, and nineteen days ago&#xA;to-day, the Parisians awoke to the sound of all the bells in the triple&#xA;circuit of the city, the university, and the town ringing a full peal.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Set up Postgres database</title>
+      <link>http://localhost:1313/posts/data_7/</link>
+      <pubDate>Wed, 09 Apr 2025 10:58:08 -0400</pubDate>
+      <guid>http://localhost:1313/posts/data_7/</guid>
+      <description>&lt;p&gt;Three hundred and forty-eight years, six months, and nineteen days ago&#xA;to-day, the Parisians awoke to the sound of all the bells in the triple&#xA;circuit of the city, the university, and the town ringing a full peal.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Write once, run everywhere</title>
+      <link>http://localhost:1313/posts/data_4/</link>
+      <pubDate>Wed, 09 Apr 2025 10:58:08 -0400</pubDate>
+      <guid>http://localhost:1313/posts/data_4/</guid>
+      <description>&lt;p&gt;Three hundred and forty-eight years, six months, and nineteen days ago&#xA;to-day, the Parisians awoke to the sound of all the bells in the triple&#xA;circuit of the city, the university, and the town ringing a full peal.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Go idioms</title>
+      <link>http://localhost:1313/posts/data_3/</link>
+      <pubDate>Sun, 09 Mar 2025 10:58:08 -0400</pubDate>
+      <guid>http://localhost:1313/posts/data_3/</guid>
+      <description>&lt;p&gt;Three hundred and forty-eight years, six months, and nineteen days ago&#xA;to-day, the Parisians awoke to the sound of all the bells in the triple&#xA;circuit of the city, the university, and the town ringing a full peal.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>SQL tale</title>
+      <link>http://localhost:1313/posts/data_2/</link>
+      <pubDate>Sun, 09 Feb 2025 10:58:08 -0400</pubDate>
+      <guid>http://localhost:1313/posts/data_2/</guid>
+      <description>&lt;p&gt;Three hundred and forty-eight years, six months, and nineteen days ago&#xA;to-day, the Parisians awoke to the sound of all the bells in the triple&#xA;circuit of the city, the university, and the town ringing a full peal.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Complicated python stuff</title>
+      <link>http://localhost:1313/posts/data_1/</link>
+      <pubDate>Thu, 09 Jan 2025 10:58:08 -0400</pubDate>
+      <guid>http://localhost:1313/posts/data_1/</guid>
+      <description>&lt;p&gt;Three hundred and forty-eight years, six months, and nineteen days ago&#xA;to-day, the Parisians awoke to the sound of all the bells in the triple&#xA;circuit of the city, the university, and the town ringing a full peal.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
