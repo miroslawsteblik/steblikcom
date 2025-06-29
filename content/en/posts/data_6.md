@@ -1,9 +1,10 @@
 ---
+author : "Miroslaw Steblik"  
 date: 2025-06-09T10:58:08-04:00
+title: "revenue-calculator"
 description: "Financial data one-on-one"
 featured_image: "/images/Pope-Edouard-de-Beaumont-1844.jpg"
 tags: ["python", "linux"]
-title: "revenue-calculator"
 show_reading_time: true
 ---
 

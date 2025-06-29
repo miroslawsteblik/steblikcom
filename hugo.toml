@@ -37,9 +37,8 @@ enableRobotsTXT = true
   filename = "sitemap.xml"
 
 [params]
-  author = "Miroslaw Steblik"  # Add your name
-  favicon = "/images/favicon.ico" # Create and add a favicon
-  site_logo = "/images/logo.png"  # Add a custom logo if you have one
+  favicon = "/images/data_engineering_favicon.svg" 
+  site_logo = "/images/socials/email.svg"  # Add a custom logo if you have one
   description = "Personal website of Miroslaw Steblik, a data engineer" 
   background_color_class = "bg-dark-blue" 
   recent_posts_number = 5  

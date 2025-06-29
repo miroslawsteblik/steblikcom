@@ -1,9 +1,10 @@
 ---
+author : "Miroslaw Steblik"  
 date: 2025-04-09T10:58:08-04:00
+title: "Set up Postgres database"
 description: "Database"
 featured_image: "/images/Pope-Edouard-de-Beaumont-1844.jpg"
 tags: ["postgres"]
-title: "Set up Postgres database"
 show_reading_time: true
 ---
 

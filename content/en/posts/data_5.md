@@ -1,9 +1,10 @@
 ---
+author : "Miroslaw Steblik"  
 date: 2025-05-09T10:58:08-04:00
+title: "CTE functions and DBT"
 description: "La grande halle"
 featured_image: "/images/Pope-Edouard-de-Beaumont-1844.jpg"
 tags: ["sql", "dbt"]
-title: "CTE functions and DBT"
 show_reading_time: true
 ---
 

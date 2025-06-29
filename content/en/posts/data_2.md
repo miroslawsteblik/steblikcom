@@ -1,9 +1,10 @@
 ---
+author : "Miroslaw Steblik"  
 date: 2025-02-09T10:58:08-04:00
+title: "SQL tale"
 description: "Windows functions"
 featured_image: "/images/Pope-Edouard-de-Beaumont-1844.jpg"
 tags: ["sql"]
-title: "SQL tale"
 show_reading_time: true
 ---
 

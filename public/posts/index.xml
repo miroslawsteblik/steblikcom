@@ -23,13 +23,6 @@
       <description>&lt;p&gt;Three hundred and forty-eight years, six months, and nineteen days ago&#xA;to-day, the Parisians awoke to the sound of all the bells in the triple&#xA;circuit of the city, the university, and the town ringing a full peal.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Pandas</title>
-      <link>http://localhost:1313/posts/data_8/</link>
-      <pubDate>Wed, 09 Apr 2025 10:58:08 -0400</pubDate>
-      <guid>http://localhost:1313/posts/data_8/</guid>
-      <description>&lt;p&gt;Three hundred and forty-eight years, six months, and nineteen days ago&#xA;to-day, the Parisians awoke to the sound of all the bells in the triple&#xA;circuit of the city, the university, and the town ringing a full peal.&lt;/p&gt;</description>
-    </item>
-    <item>
       <title>Set up Postgres database</title>
       <link>http://localhost:1313/posts/data_7/</link>
       <pubDate>Wed, 09 Apr 2025 10:58:08 -0400</pubDate>
@@ -63,6 +56,13 @@
       <pubDate>Thu, 09 Jan 2025 10:58:08 -0400</pubDate>
       <guid>http://localhost:1313/posts/data_1/</guid>
       <description>&lt;p&gt;Three hundred and forty-eight years, six months, and nineteen days ago&#xA;to-day, the Parisians awoke to the sound of all the bells in the triple&#xA;circuit of the city, the university, and the town ringing a full peal.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/data_8/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/data_8/</guid>
+      <description></description>
     </item>
   </channel>
 </rss>

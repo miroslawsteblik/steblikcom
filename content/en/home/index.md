@@ -1,6 +1,5 @@
 ---
 title: "Home"
-description: "Data Engineer with almost a decade of experience in building scalable data pipelines and solutions"
 featured_image: '/images/banner_pipeline.jpeg'
 menu:
   main:
@@ -9,7 +8,7 @@ menu:
 <div class="profile-container">
   <div class="profile-content">
     <h2>Data Engineering & Infrastructure</h2>
-    <p>Hello! I'm Miroslaw, a data engineer specializing in designing and implementing data infrastructure, ETL pipelines, and analytics solutions.</p>
+    <p>Hello! I'm Miroslaw Steblik, a data engineer with 7 years of experience in designing and implementing data infrastructure, ETL pipelines, and analytics solutions.</p>
     <div class="expertise-categories">
       <!-- Programming Section -->
       <div class="expertise-category">
@@ -62,7 +61,7 @@ menu:
       </div>
     </div>
     <h3>Get in touch</h3>
-    <p>Interested in collaborating or just want to chat about data? Feel free to reach out:</p>
+    <p>Working on something interesting in data? I'd love to hear from you:</p>
     <div class="contact-social-links">
       <a href="mailto:data@steblik.com" class="social-icon-link" title="Email">
         <img src="/images/socials/email-white.svg" alt="Email" class="social-icon">

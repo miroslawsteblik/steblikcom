@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <defs>
+    <style>
+      .bg { fill: #1e40af; }
+      .primary { fill: #ffffff; }
+      .accent { fill: #60a5fa; }
+    </style>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="16" cy="16" r="16" class="bg"/>
+  
+  <!-- Database/data stack representation -->
+  <ellipse cx="16" cy="10" rx="8" ry="2.5" class="primary"/>
+  <ellipse cx="16" cy="16" rx="8" ry="2.5" class="accent"/>
+  <ellipse cx="16" cy="22" rx="8" ry="2.5" class="primary"/>
+  
+  <!-- Connection lines showing data flow -->
+  <rect x="8" y="10" width="1.5" height="12" class="primary"/>
+  <rect x="24" y="10" width="1.5" height="12" class="primary"/>
+  
+  <!-- Small data flow indicator -->
+  <polygon points="14,8 18,8 16,5" class="accent"/>
+</svg>

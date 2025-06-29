@@ -1,9 +1,10 @@
 ---
+author : "Miroslaw Steblik"  
 date: 2025-04-09T10:58:08-04:00
 description: "Contenerization"
+title: "Write once, run everywhere"
 featured_image: "/images/Pope-Edouard-de-Beaumont-1844.jpg"
 tags: ["docker"]
-title: "Write once, run everywhere"
 show_reading_time: true
 ---
 

@@ -1,9 +1,10 @@
 ---
+author : "Miroslaw Steblik"  
 date: 2025-03-09T10:58:08-04:00
+title: "Go idioms"
 description: "First encounter with Go"
 featured_image: "/images/Pope-Edouard-de-Beaumont-1844.jpg"
 tags: ["go"]
-title: "Go idioms"
 show_reading_time: true
 ---
 

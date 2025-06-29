@@ -47,11 +47,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/data_8/</loc>
-    <lastmod>2025-04-09T10:58:08-04:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>http://localhost:1313/tags/postgres/</loc>
     <lastmod>2025-04-09T10:58:08-04:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -89,6 +84,10 @@
   </url><url>
     <loc>http://localhost:1313/posts/data_1/</loc>
     <lastmod>2025-01-09T10:58:08-04:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/posts/data_8/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>

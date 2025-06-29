@@ -38,7 +38,7 @@ body {
 }
 
 .tag {
-  background-color: #2c5282;
+  background-color: #2a3b47;
   color: white;
   padding: 0.4rem 0.8rem;
   border-radius: 2rem;
@@ -100,7 +100,7 @@ body {
   height: auto;
   border-radius: 5px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-top: 7rem;
+  margin-top: 11rem;
   object-fit: cover;
   aspect-ratio: 3/4;
 }
@@ -140,7 +140,7 @@ body {
   justify-content: center;
   width: 3rem;
   height: 3rem;
-  background-color: #2c5282;
+  background-color: #2a3b47 !important; /* Darker blue-gray, less green */
   color: white !important;
   text-decoration: none;
   border-radius: 50%;
