@@ -12,13 +12,27 @@
             <div class="blog-date">{{ .Date.Format "January 2, 2006" }}</div>
             <a href="{{ .RelPermalink }}" class="read-more-btn">Read more</a>
           </div>
-          {{ if .Params.featured_image }}
+          {{ if .Params.card_image }}
             <div class="blog-item-image">
-              <img src="{{ .Params.featured_image }}" alt="{{ .Title }}">
+              {{ $cardImage := .Resources.GetMatch .Params.card_image }}
+              {{ if $cardImage }}
+                <img src="{{ $cardImage.RelPermalink }}" alt="{{ .Title }}">
+              {{ else }}
+                <img src="{{ .Params.card_image }}" alt="{{ .Title }}">
+              {{ end }}
+            </div>
+          {{ else if .Params.featured_image }}
+            <div class="blog-item-image">
+              {{ $image := .Resources.GetMatch .Params.featured_image }}
+              {{ if $image }}
+                <img src="{{ $image.RelPermalink }}" alt="{{ .Title }}">
+              {{ else }}
+                <img src="{{ .Params.featured_image }}" alt="{{ .Title }}">
+              {{ end }}
             </div>
           {{ end }}
         </div>
-      {{ end }}
+    {{ end }}
     </div>
     
     <!-- Pagination -->
