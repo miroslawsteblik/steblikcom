@@ -42,19 +42,37 @@ You can use Hugo’s embedded web server during development to instantly see cha
 2. Install Git 
 3. Have Github account
 
-### Create a site
+## Create a site
+There are probably couple ways of doing that, but I have decided to create website theme and the main website separately and install it as Hugo module. Link to my theme is [here](github.com/miroslawsteblik/hugo-theme-data-blog) 
+
+
+### Create theme
 
 ```sh
-hugo new site steblikcom && cd steblikcom
+hugo new site my-new-theme && cd my-new-theme
 git init
-hugo new theme steblik
-echo "theme = 'steblik'" >> hugo.toml
-hugo server   # Start Hugo’s development server to view the site.
 ```
 
-Hugo have created folder structure in my root directory, including the `hugo.toml`
+I have created folder and file structure following Hugo documentation and once completed pushed to github.
 
-### Why you should create a theme
+#### Theme repository
+
+```sh
+hugo-theme-data-blog/
+├── archetypes/
+├── assets/
+├── layouts/
+├── static/
+├── exampleSite/ # after theme development was completed I moved the content/ , static/ and hugo.toml here
+│   ├── content/
+│   ├── static/
+│   └── hugo.toml 
+├── theme.toml  # created this for theme only
+├── go.mod
+└── README.md
+```
+
+#### Why you should create a theme
 
 If you package your site's layout, partials, styles, etc., into a Hugo theme:
 
@@ -67,11 +85,72 @@ If you package your site's layout, partials, styles, etc., into a Hugo theme:
 - You can version the theme and keep it separate from site-specific content.
 
 
+More information on  [Hugo Quick start](https://gohugo.io/getting-started/quick-start/)
+
+
+### Create main website
+
+1. Initialize your site as Hugo module:
+
+```sh
+# In your main site directory
+hugo mod init github.com/yourusername/your-main-site
+
+# Clean any existing module cache
+hugo mod clean
+
+# Get the module
+hugo mod get github.com/miroslawsteblik/hugo-theme-data-blog
+
+
+```
+
+2. Add the theme to your `hugo.toml`:
+```yaml
+[module]
+[[module.imports]]
+  path = "github.com/miroslawsteblik/hugo-theme-data-blog"
+```
+
+3. Update modules:
+```sh
+# Update module to the last version
+hugo mod get -u 
+# Verify it's downloaded
+hugo mod graph
+```
+
+4. Run Hugo
+```sh
+hugo server
+```
+
+#### Main site repository
+
+```sh
+exampleSite/ 
+├── .github/workflows/
+├── content/
+├── static/
+├── hugo.toml
+├── go.mod
+└── go.sum
+```
+
+### Setup
+- Added images under `static/images/`
+- Added css files under `assets/css/` and under `static/css/`
+- Added Hugo shortcodes under `layouts/shortcodes/` to allow safe usage of HTML in content files
+- Updated and created HTML files under `layouts/`
+- Build my website menu with three items: `Home`, `About`, `Blog`
+- Added main content under `content/`
+
+
 ## Creating First Content
 
 Add a new page to the site
 ```sh
-hugo new content content/articles/my-first-post.md
+hugo new content content/posts/my-first-post.md
 ```
 
 Hugo created file in the `content/posts/` directory. Note that `draft` is set to true. By defaul Hugo does not publish draft content when you build site. 
@@ -81,28 +160,30 @@ To see draft content run
 hugo server --buildDrafts
 ```
 
-More information on  [Hugo Quick start](https://gohugo.io/getting-started/quick-start/)
-
-### Setup
-- Added images under `static/images/`
-- Added css files under `assets/css/` and under `static/css/`
-- Added Hugo shortcodes under `layouts/shortcodes/` to allow safe usage of HTML in content files
-- Apdated and created HTML files under `layouts/`
-- Build my website menu with three items: `Home`, `About`, `Blog`
-- Added main content under `content/`
-
 
 ## Custom Domain Setup {#custom-domain-setup}
 
-I chose [GoDaddy](https://www.godaddy.com/en-uk) to buy my custom domain. Whole process was relatively easy and straightforward. 
+I purchased my custom domain through [GoDaddy](https://www.godaddy.com/en-uk), which provided a straightforward purchase experience.
 
-After purchase I had to configure DNS on my domain provider portal. Added `Type A` records with `Name: @` and Github IP adresses.
+### DNS Configuration
 
-[NOTE] I run out into issues, as Github requires that only Type A records are associated with their IP addresses, but GoDaddy have created "is comming" page and their WebBuilder records that had to be deleted. 
+The main setup involved configuring DNS records in the domain provider portal:
 
-More information on  [Configuring a custom domain for Github Pages site](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site)
+1. **Add Type A records** with the following configuration:
+   - Name: `@`
+   - Value: GitHub Pages IP addresses
 
-I have also placed custom `CNAME` file under my `static/`  with name of my domain
+### Common Issues
+
+**Important:** GitHub requires that only Type A records point to their IP addresses. I encountered issues because GoDaddy automatically created default records for their "coming soon" page and WebBuilder service, which needed to be deleted before the custom domain would work properly.
+
+### Additional Setup
+
+I also created a `CNAME` file in the `static/` directory containing my domain name to complete the GitHub Pages configuration.
+
+### Resources
+
+For detailed instructions, see GitHub's official documentation: [Configuring a custom domain for GitHub Pages site](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site)
 
 
 ## Deploying to GitHub Pages {#deploying-to-github-pages}
@@ -171,7 +252,7 @@ jobs:
 
 **Deployment:** The generated files are then deployed to hosting platform.
 
-Now each time i perform `git push` github action provides automatic deployment, version control integration, build error detection, and the ability to preview changes through pull requests before they go live.
+Now each time I run `git push` github action provides automatic deployment, version control integration, build error detection, and the ability to preview changes through pull requests before they go live.
 
 
 

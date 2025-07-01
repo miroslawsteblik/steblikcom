@@ -1,7 +1,11 @@
 baseURL = 'https://steblik.com/'
 languageCode = 'en-us'
 title = 'Miroslaw Steblik'
-theme = 'steblik'
+
+[module]
+  [[module.imports]]
+    path = "github.com/miroslawsteblik/hugo-theme-data-blog"
+    version = "main"
 
 [params]
   bannerImage = '/images/banner_pipeline.jpeg'
@@ -38,4 +42,3 @@ theme = 'steblik'
     name = 'Email'
     url = 'mailto:your.email@example.com'
     weight = 30
-
