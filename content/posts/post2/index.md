@@ -7,7 +7,7 @@ featured_image: "/images/banner_pipeline.jpeg"
 card_image: "/images/github_logo_icon_large2.png" 
 tags: ["go"]
 show_reading_time: true
-draft : false
+draft : true
 ---
 
 Three hundred and forty-eight years, six months, and nineteen days ago

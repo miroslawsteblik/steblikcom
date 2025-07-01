@@ -6,7 +6,7 @@ title: "Write once, run everywhere"
 featured_image: "/images/banner_pipeline.jpeg"
 tags: ["docker"]
 show_reading_time: true
-draft : false
+draft : true
 ---
 
 Three hundred and forty-eight years, six months, and nineteen days ago

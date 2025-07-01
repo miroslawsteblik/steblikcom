@@ -43,13 +43,14 @@ You can use Hugo’s embedded web server during development to instantly see cha
 3. Have Github account
 
 ## Create a site
-There are probably couple ways of doing that, but I have decided to create website theme and the main website separately and install it as Hugo module. Link to my theme is [here](github.com/miroslawsteblik/hugo-theme-data-blog) 
+There are probably couple ways of doing that, but I have decided to create website theme and the main website separately and install it as Hugo module. Link to my theme is here: [github.com/miroslawsteblik/hugo-theme-data-blog](github.com/miroslawsteblik/hugo-theme-data-blog) 
 
 
 ### Create theme
 
 ```sh
-hugo new site my-new-theme && cd my-new-theme
+hugo new site hugo-theme-data-blog
+cd hugo-theme-data-blog
 git init
 ```
 
@@ -63,10 +64,6 @@ hugo-theme-data-blog/
 ├── assets/
 ├── layouts/
 ├── static/
-├── exampleSite/ # after theme development was completed I moved the content/ , static/ and hugo.toml here
-│   ├── content/
-│   ├── static/
-│   └── hugo.toml 
 ├── theme.toml  # created this for theme only
 ├── go.mod
 └── README.md
@@ -78,7 +75,7 @@ If you package your site's layout, partials, styles, etc., into a Hugo theme:
 
 - It becomes modular and reusable.
 
-- You can include it in other Hugo projects via Git submodules (or as a remote theme).
+- You can include it in other Hugo projects 
 
 - Your main site(s) can stay clean and only define content + config.
 
@@ -94,7 +91,7 @@ More information on  [Hugo Quick start](https://gohugo.io/getting-started/quick-
 
 ```sh
 # In your main site directory
-hugo mod init github.com/yourusername/your-main-site
+hugo mod init github.com/yourusername/exampleSite
 
 # Clean any existing module cache
 hugo mod clean

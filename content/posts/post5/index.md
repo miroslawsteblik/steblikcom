@@ -6,7 +6,7 @@ description: "Financial data one-on-one"
 featured_image: "/images/banner_pipeline.jpeg"
 tags: ["python", "linux"]
 show_reading_time: true
-draft : false
+draft : true
 ---
 
 Three hundred and forty-eight years, six months, and nineteen days ago
