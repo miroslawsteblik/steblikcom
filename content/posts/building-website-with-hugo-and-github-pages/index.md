@@ -36,7 +36,7 @@ You can use Hugo’s embedded web server during development to instantly see cha
 
 ## Setting Up Hugo {#setting-up-hugo}
 
-### Prerequisites
+## Prerequisites
 
 1. [Install](https://gohugo.io/installation/) Hugo 
 2. Install Git 
@@ -45,8 +45,7 @@ You can use Hugo’s embedded web server during development to instantly see cha
 ## Create a site
 There are probably couple ways of doing that, but I have decided to create website theme and the main website separately and install it as Hugo module. Link to my theme is here: [github.com/miroslawsteblik/hugo-theme-data-blog](github.com/miroslawsteblik/hugo-theme-data-blog) 
 
-
-### Create theme
+## Create theme
 
 ```sh
 hugo new site hugo-theme-data-blog
@@ -56,7 +55,7 @@ git init
 
 I have created folder and file structure following Hugo documentation and once completed pushed to github.
 
-#### Theme repository
+### Theme repository
 
 ```sh
 hugo-theme-data-blog/
@@ -69,25 +68,20 @@ hugo-theme-data-blog/
 └── README.md
 ```
 
-#### Why you should create a theme
+### Why you should create a theme
 
 If you package your site's layout, partials, styles, etc., into a Hugo theme:
-
 - It becomes modular and reusable.
-
 - You can include it in other Hugo projects 
-
 - Your main site(s) can stay clean and only define content + config.
-
 - You can version the theme and keep it separate from site-specific content.
-
 
 More information on  [Hugo Quick start](https://gohugo.io/getting-started/quick-start/)
 
 
-### Create main website
+## Create main website
 
-1. Initialize your site as Hugo module:
+Initialize your site as Hugo module:
 
 ```sh
 # In your main site directory
@@ -98,18 +92,16 @@ hugo mod clean
 
 # Get the module
 hugo mod get github.com/miroslawsteblik/hugo-theme-data-blog
-
-
 ```
 
-2. Add the theme to your `hugo.toml`:
+Add the theme to your `hugo.toml`:
 ```yaml
 [module]
 [[module.imports]]
   path = "github.com/miroslawsteblik/hugo-theme-data-blog"
 ```
 
-3. Update modules:
+Update modules:
 ```sh
 # Update module to the last version
 hugo mod get -u 
@@ -117,12 +109,12 @@ hugo mod get -u
 hugo mod graph
 ```
 
-4. Run Hugo
+Run Hugo
 ```sh
 hugo server
 ```
 
-#### Main site repository
+### Main site repository
 
 ```sh
 exampleSite/ 
@@ -134,13 +126,13 @@ exampleSite/
 └── go.sum
 ```
 
-### Setup
-- Added images under `static/images/`
-- Added css files under `assets/css/` and under `static/css/`
-- Added Hugo shortcodes under `layouts/shortcodes/` to allow safe usage of HTML in content files
-- Updated and created HTML files under `layouts/`
-- Build my website menu with three items: `Home`, `About`, `Blog`
-- Added main content under `content/`
+## Files structure
+1. Added images under `static/images/`
+2. Added css files under `assets/css/` and under `static/css/`
+3. Added Hugo shortcodes under `layouts/shortcodes/` to allow safe usage of HTML in content files
+4. Updated and created HTML files under `layouts/`
+5. Build my website menu with three items: `Home`, `About`, `Blog`
+6. Added main content under `content/`
 
 
 ## Creating First Content
@@ -162,23 +154,23 @@ hugo server --buildDrafts
 
 I purchased my custom domain through [GoDaddy](https://www.godaddy.com/en-uk), which provided a straightforward purchase experience.
 
-### DNS Configuration
+## DNS Configuration
 
 The main setup involved configuring DNS records in the domain provider portal:
 
-1. **Add Type A records** with the following configuration:
+**Add Type A records** with the following configuration:
    - Name: `@`
    - Value: GitHub Pages IP addresses
 
-### Common Issues
+## Common Issues
 
 **Important:** GitHub requires that only Type A records point to their IP addresses. I encountered issues because GoDaddy automatically created default records for their "coming soon" page and WebBuilder service, which needed to be deleted before the custom domain would work properly.
 
-### Additional Setup
+## Additional Setup
 
 I also created a `CNAME` file in the `static/` directory containing my domain name to complete the GitHub Pages configuration.
 
-### Resources
+## Resources
 
 For detailed instructions, see GitHub's official documentation: [Configuring a custom domain for GitHub Pages site](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site)
 
@@ -191,8 +183,7 @@ For detailed instructions, see GitHub's official documentation: [Configuring a c
 git add . && git commit -m "development complete"
 ```
 
-### Set up github workflow
-- Added `.github/workflow/hugo.yml` to my root
+Added `.github/workflow/hugo.yml` to my root
 
 ```
 name: Deploy Hugo site to Pages
@@ -239,8 +230,8 @@ jobs:
 ```
 
 
-- Went to my repository **Settings** and under **Pages** -> **Build and deployment** *Source* selected `Github Actions`. 
-- Added custom domain, DNS check was performed, once succesfull i added *Enforce HTTPS*
+I navigated to my repository **Settings** and under **Pages** -> **Build and deployment** *Source* selected `Github Actions`. 
+Then added custom domain, DNS check was performed, once succesfull i added *Enforce HTTPS*
 
 
 **Trigger:** The workflow activates when you push to a specific branch (usually main or master) or create a pull request.

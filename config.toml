@@ -9,9 +9,13 @@ title = 'Miroslaw Steblik'
 
 [params]
   bannerImage = '/images/banner_pipeline.jpeg'
-  mainSections = ["posts"]
   postsPerPage = 6 # Controls how many posts are displayed per page
-  
+
+[params.social]
+  github = "miroslawsteblik"
+  linkedin = "miroslawsteblik"
+  email = "data@steblik.com"
+
 [menus]
   [[menus.main]]
     name = 'Home'
@@ -28,17 +32,3 @@ title = 'Miroslaw Steblik'
     url = '/posts/'
     weight = 30
 
-  [[menus.social]]
-    name = 'GitHub'
-    url = 'https://github.com/miroslawsteblik'
-    weight = 10
-    
-  [[menus.social]]
-    name = 'LinkedIn'
-    url = 'https://linkedin.com/in/miroslawsteblik'
-    weight = 20
-
-  [[menus.social]]
-    name = 'Email'
-    url = 'mailto:your.email@example.com'
-    weight = 30

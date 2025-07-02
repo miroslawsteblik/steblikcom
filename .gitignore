@@ -1,3 +1,8 @@
-public/
-resources/
-.hugo_build.lock
+# Hugo
+/public/
+/resources/
+/tmp/
+
+# Private documentation (optional)
+MAINTENANCE.md
+DEVNOTES.md
