@@ -5,7 +5,7 @@ featured_image: '/images/banner_pipeline.jpeg'
 
 # 
 
-{{< profile-card image="/images/miroslaw_head.jpeg" alt="Professional headshot of Miroslaw Steblik" >}}
+{{< profile-card image="/images/miroslaw_steblik_head.png" alt="Professional headshot of Miroslaw Steblik" >}}
 👋 Hello! I'm Miroslaw Steblik, a data engineer with 7 years of experience in designing and implementing data infrastructure, ETL pipelines, and analytics solutions.
 {{< /profile-card >}}
 
