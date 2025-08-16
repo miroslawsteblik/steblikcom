@@ -1,0 +1,7 @@
+{{ $copyCodeJS := resources.Get "js/copy-code.js" | resources.Minify }}
+<script src="{{ $copyCodeJS.RelPermalink }}"></script>
+
+
+<!-- Custom scripts -->
+{{ $headerJS := resources.Get "js/header.js" | resources.Minify }}
+<script src="{{ $headerJS.RelPermalink }}"></script>

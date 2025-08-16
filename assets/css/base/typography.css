@@ -1,0 +1,77 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  background-color: var(--background-color);
+}
+
+body {
+  color: var(--text-color);
+  font-family: var(--font-family-primary);
+  line-height: var(--line-height-base);
+  background-color: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-heading);
+  line-height: var(--line-height-heading);
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-text);
+}
+
+h1 { font-size: var(--font-size-xxl); }
+h2 { font-size: var(--font-size-xl); }
+h3 { font-size: var(--font-size-lg); }
+
+p {
+  margin-bottom: var(--spacing-sm);
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: var(--transition-base);
+}
+
+a:hover {
+  color: var(--color-secondary);
+  text-decoration: underline;
+}
+
+ul, ol {
+  margin-bottom: var(--spacing-sm);
+  padding-left: var(--spacing-md);
+}
+
+blockquote {
+  margin: var(--spacing-md) 0;
+  padding-left: var(--spacing-md);
+  border-left: 4px solid var(--color-primary);
+  font-style: italic;
+  color: var(--color-text-light);
+}
+
+.content-justified p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+/* Don't justify short paragraphs - they look awkward */
+/* .content-justified p:has(< 60 characters) is not valid CSS and has been removed */
+.content-justified p[data-short="true"] {
+  text-align: left;
+}
+
+/* Mobile: no justification at all */
+@media (max-width: 768px) {
+  .content-justified p {
+    text-align: left !important;
+  }
+}

@@ -1,0 +1,12 @@
+<div class="content-container {{ .Get "class" | default "" }}">
+  {{ if .Get "header" }}
+  <div class="content-header">
+    <h1>{{ .Get "header" }}</h1>
+  </div>
+  {{ end }}
+  
+  <div class="content-body content-justified">
+    {{ .Inner }}
+  </div>
+</div>
+

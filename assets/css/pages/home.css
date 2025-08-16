@@ -1,0 +1,179 @@
+/* ==========================================================================
+   HOME PAGE STYLES
+   ========================================================================== */
+
+/* ==========================================================================
+   PROFILE CONTAINER & LAYOUT
+   ========================================================================== */
+
+.profile-container {
+  display: flex;
+  gap: 3rem;
+  margin: 2rem 0 3rem;
+  align-items: flex-start;
+}
+
+.profile-content {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-content-full {
+  width: 100%;
+  margin: 2rem 0 3rem;
+}
+
+
+
+/* ==========================================================================
+   PROFILE CARD COMPONENT
+   ========================================================================== */
+
+.profile-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 2rem;
+  width: 100%;
+
+  align-items: center;
+  margin-bottom: 3rem;
+  transition: all 0.3s ease;
+}
+
+.profile-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+
+/* ==========================================================================
+   PROFILE PHOTO & CAPTION
+   ========================================================================== */
+
+.profile-photo {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  filter: brightness(1.01);
+}
+
+.profile-photo:hover {
+  transform: scale(1.05);
+}
+
+.profile-caption {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  padding: 0;
+}
+
+.profile-caption p {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: var(--text-color);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  text-align: left;
+}
+
+
+
+/* ==========================================================================
+   EXPERTISE SECTION
+   ========================================================================== */
+
+.expertise-section {
+  margin-top: 2rem;
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+.expertise-categories {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative;
+}
+
+.expertise-category {
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.expertise-category:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.expertise-category h4 {
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+  color: #2a3b47;
+}
+
+.expertise-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.5rem 0;
+  font-size: 1.2rem;
+}
+
+/* ==========================================================================
+   SKILLS SECTION
+   ========================================================================== */
+
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.skill-category h3 {
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
+}
+
+.skill-category ul {
+  list-style-type: none;
+}
+
+.skill-category li {
+  margin-bottom: 0.5rem;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.skill-category li:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+}
+
+
+/* ==========================================================================
+   SHORTCODES OVERRIDES
+   ========================================================================== */
+
+.category-title {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--primary-color);
+}

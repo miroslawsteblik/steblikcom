@@ -1,0 +1,22 @@
+/* ==========================================================================
+   BUTTON COMPONENTS
+   ========================================================================== */
+
+.read-more-btn {
+  display: inline-block !important;
+  padding: 0.5rem 1.2rem !important;
+  background-color: var(--primary-color) !important;
+  color: white !important;
+  border-radius: 4px !important;
+  text-decoration: none !important;
+  transition: all 0.3s !important;
+  font-weight: 500 !important;
+  align-self: flex-start !important;
+  margin-top: 1rem !important;
+  visibility: visible !important;
+}
+
+.read-more-btn:hover {
+  background-color: #003d99;
+  transform: translateY(-2px);
+}

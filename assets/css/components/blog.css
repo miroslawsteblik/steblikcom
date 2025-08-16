@@ -1,0 +1,90 @@
+/* ==========================================================================
+   BLOG COMPONENTS
+   ========================================================================== */
+
+.blog-item-card {
+  background-color: white !important;
+  border-radius: 8px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+  transition: transform 0.3s, box-shadow 0.3s !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: row !important;
+  height: 250px !important;
+  align-items: stretch !important;
+}
+
+.blog-item-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.blog-item-content {
+  padding: 2rem !important;
+  flex: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+}
+
+.blog-item-image img {
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+  max-width: 100%;
+  display: block;
+}
+
+.blog-title {
+  margin: 0 0 1rem 0;
+  line-height: 1.2;
+  max-height: 3.6em;
+  overflow: hidden;
+}
+
+/* Force blog cards to display properly */
+.blog-list-improved {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 2rem !important;
+  margin: 2rem 0 !important;
+  max-width: 1400px !important;
+  align-items: start !important;
+}
+
+.blog-item-image {
+  flex: 0 0 280px !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.blog-item-image img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  max-width: none !important;
+  display: block !important;
+}
+
+.blog-title {
+  margin: 0 0 1rem 0 !important;
+  line-height: 1.2 !important;
+  display: block !important;
+  visibility: visible !important;
+  max-height: 3.6em !important;
+  overflow: hidden !important;
+}
+
+.blog-date {
+  color: #666 !important;
+  margin-bottom: 1rem !important;
+  display: block !important;
+  visibility: visible !important;
+}
+
+.blog-description {
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  color: var(--text-color);
+}

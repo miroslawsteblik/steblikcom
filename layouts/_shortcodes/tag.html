@@ -1,0 +1,10 @@
+<!-- themes/steblik/layouts/shortcodes/tag.html -->
+{{ $url := .Get "url" }}
+{{ $name := .Get "name" }}
+{{ if $url }}
+<span class="tag"><a href="{{ $url }}" class="tag-link">{{ .Inner }}</a></span>
+{{ else if $name }}
+<span class="tag"><a href="/tags/{{ $name | urlize }}" class="tag-link">{{ $name }}</a></span>
+{{ else }}
+<span class="tag"><a href="#" class="tag-link">{{ .Inner }}</a></span>
+{{ end }}

@@ -1,0 +1,95 @@
+/* ==========================================================================
+   MAIN LAYOUT
+   ========================================================================== */
+
+/* in use */
+/* .section-title {
+  margin-bottom: 1.5rem;
+  color: var(--text-color);
+} */
+
+/* ==========================================================================
+   MAIN LAYOUT STYLES
+   ========================================================================== */
+
+/* main {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 3rem 5rem;
+  background-color: var(--background-color);
+  flex: 1 0 auto;
+} */
+
+/* Page container backgrounds */
+.home-container,
+.about-container,
+.post,
+.about-page-container,
+.blog-description {
+  background-color: var(--background-color);
+}
+
+/* Specific page padding */
+/* main:has(.blog-container),
+main:has(.post),
+main:has(.about-page-container),
+main:has(.post-page-container),
+main:has(.blog-page-container) {
+  padding: 0 3rem 5rem; 
+} */
+
+/* ==========================================================================
+   PAGE LAYOUT STYLES - NEW
+   ========================================================================== */
+/* Base container styling */
+.main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: var(--background-color);
+}
+
+/* Page header styling */
+.page-header {
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1rem;
+}
+
+.page-title {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.page-description {
+  color: var(--text-color-light);
+  font-size: 1.1rem;
+}
+
+/* Page content base styling */
+.page-content {
+  line-height: 1.6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .main-container {
+    padding: 1rem;
+  }
+
+  .page-header {
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Make all pages use a flexbox layout */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+main {
+  flex: 1 0 auto; /* Grow to fill available space */
+}

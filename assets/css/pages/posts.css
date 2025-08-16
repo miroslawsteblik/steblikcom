@@ -1,0 +1,382 @@
+/* ==========================================================================
+   POST PAGE STYLES
+   ========================================================================== */
+
+/* ==========================================================================
+   POST LAYOUT & CONTAINER
+   ========================================================================== */
+
+.post-page-container {
+  padding: 2rem 0; /* Remove horizontal padding, let main handle it */
+  max-width: 100%; /* Remove width constraint, let main handle it */
+  margin: 0;
+
+
+}
+
+
+.post {
+  max-width: none; /* Remove width constraint, let main handle it */
+  margin: 0 auto;
+  padding: 0;
+}
+
+.section.posts {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* ==========================================================================
+   POST HEADER
+   ========================================================================== */
+
+.post-header {
+  max-width: none; 
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+
+  
+}
+
+
+/* Meta line with date and read time */
+.post-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+  padding: 0 1rem;
+  max-width: none; /* Remove width constraint, let main handle it */
+
+}
+
+.post-date time {
+  color: var(--text-light);
+}
+
+.read-time {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: var(--text-light);
+
+}
+
+.read-time-icon {
+  font-size: 0.9rem;
+}
+
+.read-time-text {
+  font-weight: 400;
+  letter-spacing: 0.3px;
+}
+
+.post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+  justify-content: center;
+  margin-top: var(--spacing-sm);
+}
+
+/* ==========================================================================
+   FEATURED IMAGE
+   ========================================================================== */
+
+.post-featured-image {
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+}
+
+.post-featured-image img {
+  width: 100%; /* Full width of the container */
+  max-width: none; /* Remove width constraint, let main handle it */
+  height: auto;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 20px var(--shadow-light);
+}
+
+/* ==========================================================================
+   POST CONTENT
+   ========================================================================== */
+
+.post-content {
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-base);
+  color: var(--text-color);
+
+}
+
+/* Typography within post content */
+.post-content h1,
+.post-content h2,
+.post-content h3,
+.post-content h4,
+.post-content h5,
+.post-content h6 {
+  margin-top: var(--spacing-xl);
+  margin-bottom: var(--spacing-sm);
+  color: var(--text-color);
+  line-height: var(--line-height-heading);
+}
+
+.post-content h1:first-child,
+.post-content h2:first-child,
+.post-content h3:first-child {
+  margin-top: 0;
+}
+
+.post-content h2 {
+  font-size: 1.8rem;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: var(--spacing-xs);
+}
+
+.post-content h3 {
+  font-size: 1.4rem;
+}
+
+.post-content h4 {
+  font-size: 1.2rem;
+}
+
+.post-content p {
+  margin-bottom: var(--spacing-md);
+}
+
+.post-content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: var(--spacing-lg) auto;
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 12px var(--shadow-light);
+}
+
+/* ==========================================================================
+   CODE BLOCKS & INLINE CODE
+   ========================================================================== */
+
+.post-content code {
+  background-color: #f8f9fa;
+  color: #e83e8c;
+  padding: 0.2rem 0.4rem;
+  border-radius: var(--border-radius-small);
+  font-family: var(--font-family-mono);
+  font-size: 0.9em;
+}
+
+.post-content pre {
+  background-color: #f8f9fa;
+  border: 1px solid var(--border-color);
+  padding: var(--spacing-sm);
+  border-radius: var(--border-radius);
+  overflow-x: auto;
+  margin-bottom: var(--spacing-md);
+  line-height: 1.4;
+}
+
+.post-content pre code {
+  background-color: transparent;
+  color: inherit;
+  padding: 0;
+  border-radius: 0;
+}
+
+/* ==========================================================================
+   BLOCKQUOTES & LISTS
+   ========================================================================== */
+
+.post-content blockquote {
+  border-left: 4px solid var(--primary-color);
+  background-color: rgba(0, 82, 204, 0.05);
+  padding: var(--spacing-sm) var(--spacing-sm) var(--spacing-sm) var(--spacing-md);
+  margin: var(--spacing-lg) 0;
+  font-style: italic;
+  border-radius: 0 var(--border-radius-small) var(--border-radius-small) 0;
+}
+
+.post-content blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+.post-content ul,
+.post-content ol {
+  margin-bottom: var(--spacing-md);
+  padding-left: var(--spacing-md);
+}
+
+.post-content li {
+  margin-bottom: var(--spacing-xs);
+  line-height: 1.7;
+}
+
+.post-content ul ul,
+.post-content ol ol,
+.post-content ul ol,
+.post-content ol ul {
+  margin-top: var(--spacing-xs);
+  margin-bottom: var(--spacing-xs);
+}
+
+/* ==========================================================================
+   TABLES
+   ========================================================================== */
+
+.post-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--spacing-lg) 0;
+  background-color: white;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: 0 2px 8px var(--shadow-light);
+}
+
+.post-content th,
+.post-content td {
+  padding: var(--spacing-sm);
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.post-content th {
+  background-color: var(--background-color);
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.post-content tr:last-child td {
+  border-bottom: none;
+}
+
+/* ==========================================================================
+   POST FOOTER
+   ========================================================================== */
+
+.post-footer {
+  margin-top: var(--spacing-xl);
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--border-color);
+  background-color: transparent;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ==========================================================================
+   TABLE OF CONTENTS (if used)
+   ========================================================================== */
+
+.post-toc {
+  background-color: var(--background-color);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-md);
+  margin: var(--spacing-lg) 0;
+  border: 1px solid var(--border-color);
+}
+
+.post-toc h3 {
+  margin-top: 0;
+  margin-bottom: var(--spacing-sm);
+  font-size: 1.1rem;
+  color: var(--secondary-color);
+}
+
+.post-toc ul {
+  margin: 0;
+  padding-left: var(--spacing-sm);
+}
+
+.post-toc a {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.post-toc a:hover {
+  color: var(--primary-color);
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .post-title {
+    font-size: 2rem;
+  }
+  
+  .post-meta {
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-xs);
+  }
+  
+  .post-content {
+    font-size: var(--font-size-base);
+  }
+  
+  .post-content h2 {
+    font-size: 1.5rem;
+  }
+  
+  .post-content h3 {
+    font-size: 1.3rem;
+  }
+  
+  
+  .post-content table {
+    font-size: 0.9rem;
+  }
+  
+  .post-content th,
+  .post-content td {
+    padding: var(--spacing-xs);
+  }
+}
+
+@media (max-width: 480px) {
+  .post-title {
+    font-size: 1.75rem;
+  }
+  
+  .post-content {
+    font-size: 1rem;
+  }
+}
+
+
+
+
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  .post-page-container {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+  
+  .post-content table {
+    margin-left: -0.75rem;
+    margin-right: -0.75rem;
+    width: calc(100% + 1.5rem);
+  }
+  
+  .post-content pre {
+    margin-left: -0.75rem;
+    margin-right: -0.75rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+  
+  .post-content img,
+  .post-featured-image img {
+    margin-left: -0.75rem;
+    margin-right: -0.75rem;
+    width: calc(100% + 1.5rem);
+    max-width: calc(100% + 1.5rem);
+  }
+}

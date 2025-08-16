@@ -1,0 +1,36 @@
+/* ==========================================================================
+   DESKTOP RESPONSIVE STYLES
+   ========================================================================== */
+
+@media (min-width: 1024px) {
+  /* Desktop-specific adjustments */
+  
+  .container {
+    padding: 0 2rem;
+  }
+  
+  .main-content {
+    padding: 3rem 0;
+  }
+  
+  /* Blog grid for large screens */
+  .blog-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+  
+  /* Navigation improvements for desktop */
+  .navbar {
+    padding: 1rem 2rem;
+  }
+  
+  /* Typography scaling for larger screens */
+  h1 {
+    font-size: 3rem;
+  }
+  
+  h2 {
+    font-size: 2.5rem;
+  }
+  
+}

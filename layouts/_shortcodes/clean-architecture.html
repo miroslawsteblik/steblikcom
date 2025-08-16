@@ -1,0 +1,428 @@
+<style>
+  .architecture-container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    font-family: var(--font-family-primary);
+  }
+
+  .main-flow {
+    display: grid;
+    grid-template-columns: 1.5fr 1.5fr 2fr 1.5fr;
+    grid-template-rows: auto;
+    padding: var(--spacing-md);
+    gap: var(--spacing-sm);
+    background: var(--background-color);
+    align-items: start;
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+
+  .component {
+    /* flex: 1; */
+    background: white;
+    border-radius: var(--border-radius);
+    padding: var(--spacing-sm);
+    box-shadow: var(--box-shadow);
+    position: relative;
+    min-height: 280px;
+    border-top: 4px solid;
+    border-left: 4px solid transparent;
+    height: 100%;
+    /* word-wrap: break-word; */
+    /* overflow-wrap: break-word; */
+  }
+
+  .component-subtitle {
+    font-size: var(--font-size-sm);
+    font-weight: 400;
+    margin: var(--spacing-xs) 0;
+    text-align: center;
+  }
+
+  .primary-adapters {
+    border-top-color: #e74c3c;
+    background: linear-gradient(145deg, white, rgba(231, 76, 60, 0.05));
+  }
+
+  .primary-ports {
+    border-top-color: #f39c12;
+    background: linear-gradient(145deg, white, rgba(243, 156, 18, 0.05));
+  }
+
+  .application {
+    border-top-color: var(--primary-color);
+    background: linear-gradient(145deg, white, rgba(0, 82, 204, 0.05));
+  }
+
+  .domain {
+    border-top-color: #27ae60;
+    background: linear-gradient(145deg, white, rgba(39, 174, 96, 0.05));
+    border: 3px solid #27ae60;
+    box-shadow: 0 6px 20px rgba(39, 174, 96, 0.2);
+  }
+
+  .secondary-ports {
+    border-top-color: #9b59b6;
+    background: linear-gradient(145deg, white, rgba(155, 89, 182, 0.05));
+  }
+
+  .secondary-adapters {
+    border-top-color: var(--secondary-color);
+    background: linear-gradient(145deg, white, rgba(51, 51, 51, 0.05));
+  }
+
+  .component h3 {
+    margin: 0 0 var(--spacing-xs) 0;
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    text-align: center;
+    color: var(--text-color);
+    font-family: var(--font-family-heading);
+  }
+
+  .component ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .component li {
+    padding: var(--spacing-xs);
+    margin: var(--spacing-xs) 0;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: var(--border-radius);
+    border-left: 3px solid var(--accent-color);
+    font-size: var(--font-size-sm);
+    transition: var(--transition-base);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    line-height: 1.4;
+  }
+
+  .component li:hover {
+    background: rgba(255, 255, 255, 0.9);
+    transform: translateX(3px);
+    border-left-color: var(--primary-color);
+  }
+
+  .domain-core {
+    background: rgba(39, 174, 96, 0.1) !important;
+    border: 2px solid #27ae60 !important;
+    font-weight: 500;
+  }
+
+  .domain-core-dark {
+    background: rgba(0, 66, 28, 0.2) !important;
+    border: 2px solid #27ae60 !important;
+    font-weight: 500;
+  }
+
+  .layer-core-category {
+    background: rgba(155, 89, 182, 0.1) !important;
+    border: 2px solid #9b59b6 !important;
+    font-weight: 500;
+  }
+
+  .arrow {
+    position: absolute;
+    top: 50%;
+    right: -8px;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 8px solid var(--primary-color);
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    z-index: 10;
+  }
+
+  .domain .arrow {
+    border-left-color: #27ae60;
+  }
+
+  .flow-description {
+    background: var(--accent-color);
+    padding: var(--spacing-md);
+    margin: var(--spacing-sm) 0;
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--primary-color);
+  }
+
+  .flow-item {
+    margin: var(--spacing-xs) 0;
+    font-size: var(--font-size-sm);
+    color: var(--text-color);
+  }
+
+  .flow-item strong {
+    color: var(--primary-color);
+  }
+
+  .infrastructure {
+    background: #34495e;
+    color: white;
+    padding: 25px;
+  }
+
+  .infrastructure h3 {
+    margin: 0 0 20px 0;
+    text-align: center;
+    color: white;
+    font-size: 1.3em;
+  }
+
+  .infra-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .infra-component {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+  }
+
+  .infra-component:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+  }
+
+  .infra-component h4 {
+    margin: 0 0 15px 0;
+    color: #ecf0f1;
+    font-size: 1.1em;
+    text-align: left;
+  }
+
+  .infra-component ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .infra-component li {
+    padding: 5px 0;
+    color: #bdc3c7;
+    font-size: 0.9em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .infra-component li:last-child {
+    border-bottom: none;
+  }
+
+  .connection-arrows {
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    background: #ecf0f1;
+  }
+
+  .down-arrow {
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid #34495e;
+    margin: 0 10px;
+  }
+
+  @media (max-width: 1200px) {
+    .main-flow {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto auto;
+    }
+    .adapters-left {
+      grid-column: 1;
+      grid-row: 1;
+    }
+    .hexagon-center {
+      grid-column: 2;
+      grid-row: 1;
+      flex-direction: column;
+    }
+    .adapters-right {
+      grid-column: 1 / -1;
+      grid-row: 2;
+      flex-direction: row;
+      justify-content: center;
+    }
+    .component {
+      min-height: 200px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .architecture-container {
+      margin: 0 var(--spacing-xs);
+    }
+    .main-flow {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto auto;
+      padding: var(--spacing-sm);
+      gap: var(--spacing-sm);
+    }
+    .adapters-left,
+    .hexagon-center,
+    .adapters-right {
+      grid-column: 1;
+      flex-direction: column;
+    }
+    .adapters-left {
+      grid-row: 1;
+    }
+    .hexagon-center {
+      grid-row: 2;
+    }
+    .adapters-right {
+      grid-row: 3;
+    }
+    .component {
+      padding: var(--spacing-sm);
+      min-height: 180px;
+    }
+    .component h3 {
+      font-size: var(--font-size-sm);
+    }
+    .component li {
+      font-size: 12px;
+      padding: 4px 8px;
+      line-height: 1.3;
+    }
+    .arrow {
+      display: none;
+    }
+    .flow-description {
+      padding: var(--spacing-sm);
+    }
+    .infra-grid {
+      grid-template-columns: 1fr;
+      gap: var(--spacing-sm);
+    }
+  }
+</style>
+
+<div class="architecture-container">
+  <div class="main-flow">
+    <!-- Left Side: Primary/Driving Adapters -->
+    <div class="adapters-left">
+      <div class="component primary-adapters">
+        <h3>PRIMARY ADAPTERS</h3>
+        <div class="component-subtitle">(Driving/Inbound)</div>
+        <ul>
+          <li class="layer-core-category"><strong>CLI Handler</strong></li>
+          <li>CLIArguments</li>
+          <li>ArgumentParser</li>
+          <li>CLIHandler</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Center: Application Core -->
+
+    <div class="component application">
+      <h3>APPLICATION LAYER</h3>
+      <div class="component-subtitle">(Interfaces & Orchestration)</div>
+      <ul>
+        <li class="layer-core-category"><strong>Use Cases</strong></li>
+        <li>FetchMarketDataUseCase</li>
+        <li class="layer-core-category">
+          <strong>Port Interfaces</strong>
+        </li>
+        <li>MarketDataRepositoryPort</li>
+        <li>MarketDataAPIPort</li>
+        <li>APILogRepositoryPort</li>
+        <li>DataMapperPort</li>
+        <li class="layer-core-category"><strong>Containers</strong></li>
+        <li>DependencyInjection</li>
+        <li>Service Registration</li>
+      </ul>
+    </div>
+
+    <div class="component domain">
+      <h3>CORE DOMAIN</h3>
+      <div class="component-subtitle">(Protected Business Logic)</div>
+      <ul>
+        <li class="domain-core-dark"><strong>Entities</strong></li>
+        <li class="domain-core">MarketData</li>
+        <li class="domain-core">ApiLog</li>
+        <li class="domain-core-dark"><strong>Value Objects</strong></li>
+        <li class="domain-core">ApiResponse</li>
+        <li class="domain-core-dark"><strong>Domain Services</strong></li>
+        <li class="domain-core">MarketDataService</li>
+        <li class="domain-core">ValidationService</li>
+      </ul>
+    </div>
+
+    <div class="component secondary-adapters">
+      <h3>SECONDARY ADAPTERS</h3>
+      <div class="component-subtitle">(Driven/Outbound)</div>
+      <ul>
+        <li class="layer-core-category">
+          <strong>External APIs</strong>
+        </li>
+        <li>AlphaVantageAPI -> (MarketDataAPIPort)</li>
+        <li>DataMapper -> (DataMapperPort)</li>
+        <li class="layer-core-category"><strong>Persistence</strong></li>
+        <li>PostgresAPILogRepository -> (APILogRepositoryPort)</li>
+        <li>PostgresMarketDataRepository -> (MarketDataRepositoryPort)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="connection-arrows">
+    <div class="down-arrow"></div>
+    <div class="down-arrow"></div>
+    <div class="down-arrow"></div>
+  </div>
+
+  <div class="infrastructure">
+    <h3>INFRASTRUCTURE LAYER (External Systems)</h3>
+    <div class="infra-grid">
+      <div class="infra-component">
+        <h4>PostgreSQL Database</h4>
+        <ul>
+          <li>• Queries</li>
+          <li>• Schema</li>
+          <li>• Configuration</li>
+          <li>• Connection Pooling</li>
+        </ul>
+      </div>
+      <div class="infra-component">
+        <h4>Environment</h4>
+        <ul>
+          <li>• Configuration Loader</li>
+          <li>• Environment Variables</li>
+          <li>• Rate Limits</li>
+          <li>• Authentication</li>
+        </ul>
+      </div>
+      <div class="infra-component">
+        <h4>Resources</h4>
+        <ul>
+          <li>• CSV files</li>
+          <li>• JSON files</li>
+          <li>• Config files</li>
+          <li>• Temp storage</li>
+        </ul>
+      </div>
+      <div class="infra-component">
+        <h4>Log System</h4>
+        <ul>
+          <li>• Log Files</li>
+          <li>• Console Output</li>
+          <li>• Error Logs</li>
+          <li>• Structured Logs</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

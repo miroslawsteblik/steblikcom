@@ -1,0 +1,83 @@
+/* ==========================================================================
+   GOAT DIAGRAM COMPONENT
+   ========================================================================== */
+
+.goat-container {
+  margin: var(--spacing-md) 0;
+  background: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+  border: 1px solid rgba(0, 82, 204, 0.1);
+  transition: var(--transition-base);
+}
+
+.goat-container:hover {
+  box-shadow: 0 4px 12px rgba(0, 82, 204, 0.15);
+  transform: translateY(-1px);
+}
+
+.goat-container.compact {
+  margin: var(--spacing-sm) 0;
+  box-shadow: none;
+  border: 1px solid rgba(0, 82, 204, 0.2);
+}
+
+.goat-title {
+  background: var(--primary-color);
+  color: white;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  font-family: var(--font-family-heading);
+  font-weight: 600;
+  font-size: var(--font-size-lg);
+  letter-spacing: 0.025em;
+}
+
+.goat-diagram {
+  padding: var(--spacing-md);
+  text-align: center;
+  background: var(--accent-color);
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.goat-diagram svg {
+  max-width: 100%;
+  height: auto;
+  font-family: var(--font-family-code) !important;
+  font-size: 14px;
+  line-height: var(--line-height-base);
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+}
+
+.goat-caption {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background: rgba(0, 82, 204, 0.05);
+  border-top: 1px solid rgba(0, 82, 204, 0.1);
+  font-size: var(--font-size-sm);
+  color: var(--secondary-color);
+  font-style: italic;
+  text-align: left;
+  font-family: var(--font-family-primary);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .goat-container {
+    margin: var(--spacing-sm) 0;
+  }
+  
+  .goat-diagram {
+    padding: var(--spacing-sm);
+  }
+  
+  .goat-diagram svg {
+    font-size: 12px;
+  }
+  
+  .goat-title {
+    font-size: var(--font-size-base);
+  }
+}

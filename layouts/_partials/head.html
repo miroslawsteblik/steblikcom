@@ -1,0 +1,171 @@
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<!-- Favicon links -->
+{{ $favicon := .Site.Params.favicon | default "/favicon.ico" }}
+<link rel="icon" type="image/x-icon" href="{{ $favicon }}" />
+<link
+  rel="icon"
+  type="image/png"
+  sizes="16x16"
+  href="/images/favicons/favicon-16x16.png"
+/>
+<link
+  rel="icon"
+  type="image/png"
+  sizes="32x32"
+  href="/images/favicons/favicon-32x32.png"
+/>
+<link
+  rel="apple-touch-icon"
+  sizes="180x180"
+  href="/images/favicons/apple-touch-icon.png"
+/>
+<link
+  rel="icon"
+  type="image/png"
+  sizes="192x192"
+  href="/images/favicons/android-chrome-192x192.png"
+/>
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="theme-color" content="#ffffff" />
+
+<title>
+  {{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title
+  site.Title }}{{ end }}
+</title>
+
+<!-- SEO Meta Tags -->
+<meta
+  name="description"
+  content="{{ with .Description }}{{ . }}{{ else }}{{ if .IsPage }}{{ .Summary }}{{ else }}{{ with site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}"
+/>
+<meta name="author" content="Miroslaw Steblik" />
+<meta name="keywords" content="data engineering, SQL, Python, PostgreSQL, dbt, analytics, financial services, Bloomberg, Mercer" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="{{ .Permalink }}" />
+
+<!-- Professional/Business-Safe Meta Tags -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' fonts.googleapis.com fonts.gstatic.com" />
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="X-Frame-Options" content="DENY">
+<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+
+<meta name="rating" content="general" />
+<meta name="classification" content="Business, Technology, Professional" />
+<meta name="subject" content="Data Engineering and Analytics" />
+
+<!-- Open Graph / Facebook -->
+<meta
+  property="og:type"
+  content="{{ if .IsPage }}article{{ else }}website{{ end }}"
+/>
+<meta property="og:url" content="{{ .Permalink }}" />
+<meta property="og:title" content="{{ if .IsHome }}{{ site.Title }}{{ else }}{{
+printf "%s | %s" .Title site.Title }}{{ end }}">
+<meta
+  property="og:description"
+  content="{{ with .Description }}{{ . }}{{ else }}{{ if .IsPage }}{{ .Summary }}{{ else }}{{ with site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}"
+/>
+{{ with .Params.featured_image }}<meta
+  property="og:image"
+  content="{{ . | absURL }}"
+/>{{ end }}
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content="{{ .Permalink }}" />
+<meta name="twitter:title" content="{{ if .IsHome }}{{ site.Title }}{{ else }}{{
+printf "%s | %s" .Title site.Title }}{{ end }}">
+<meta
+  name="twitter:description"
+  content="{{ with .Description }}{{ . }}{{ else }}{{ if .IsPage }}{{ .Summary }}{{ else }}{{ with site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}"
+/>
+{{ with .Params.featured_image }}<meta
+  name="twitter:image"
+  content="{{ . | absURL }}"
+/>{{ end }}
+
+<!-- CSS -->
+{{ partialCached "css.html" . }}
+<!-- <link rel="stylesheet" href="/css/custom-overrides.css"> -->
+<!-- <link rel="stylesheet" href="/css/social-links-fix.css"> -->
+<!-- <link rel="stylesheet" href="/css/fix-social-urls.css"> -->
+<!-- <link rel="stylesheet" href="/css/icon-fix.css"> -->
+<!-- <link rel="stylesheet" href="/css/simple-contact.css"> -->
+
+<!-- Structured Data (JSON-LD) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "{{ .Site.BaseURL }}#website",
+      "url": "{{ .Site.BaseURL }}",
+      "name": "{{ .Site.Title }}",
+      "description": "{{ .Site.Params.description }}",
+      "publisher": {
+        "@id": "{{ .Site.BaseURL }}#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "{{ .Site.BaseURL }}#person",
+      "name": "Miroslaw Steblik",
+      "jobTitle": "Data Engineer",
+      "worksFor": [
+        {
+          "@type": "Organization",
+          "name": "Bloomberg"
+        },
+        {
+          "@type": "Organization",
+          "name": "Mercer"
+        }
+      ],
+      "knowsAbout": ["Data Engineering", "SQL", "Python", "PostgreSQL", "dbt", "Analytics"],
+      "url": "{{ .Site.BaseURL }}",
+      "sameAs": [
+        {{ if .Site.Params.linkedin }}"{{ .Site.Params.linkedin }}"{{ end }}
+        {{ if .Site.Params.github }}{{ if .Site.Params.linkedin }},{{ end }}"{{ .Site.Params.github }}"{{ end }}
+      ]
+    }
+    {{ if .IsPage }}
+    ,{
+      "@type": "{{ if eq .Type "posts" }}BlogPosting{{ else }}WebPage{{ end }}",
+      "@id": "{{ .Permalink }}#webpage",
+      "url": "{{ .Permalink }}",
+      "name": "{{ .Title }}",
+      "headline": "{{ .Title }}",
+      "description": "{{ with .Description }}{{ . }}{{ else }}{{ .Summary }}{{ end }}",
+      "datePublished": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}",
+      {{ if .Lastmod }}"dateModified": "{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}",{{ end }}
+      "author": {
+        "@id": "{{ .Site.BaseURL }}#person"
+      },
+      "publisher": {
+        "@id": "{{ .Site.BaseURL }}#person"
+      },
+      "isPartOf": {
+        "@id": "{{ .Site.BaseURL }}#website"
+      }
+      {{ with .Params.featured_image }}
+      ,"image": {
+        "@type": "ImageObject",
+        "url": "{{ . | absURL }}"
+      }
+      {{ end }}
+    }
+    {{ end }}
+  ]
+}
+</script>
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap"
+  rel="stylesheet"
+/>

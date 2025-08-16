@@ -1,0 +1,73 @@
+.viz-container {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.viz-container h3 {
+  margin-top: 0;
+  color: var(--primary-color);
+}
+
+#pipeline-visualization {
+  height: 300px;
+  margin: 1rem 0;
+  position: relative;
+}
+
+.viz-controls {
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.viz-button, .viz-select {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  background: white;
+  font-family: var(--font-family-primary);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.viz-button:hover {
+  background: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.node {
+  cursor: pointer;
+}
+
+.node circle {
+  fill: #fff;
+  stroke: var(--primary-color);
+  stroke-width: 2px;
+}
+
+.node text {
+  font: 12px sans-serif;
+}
+
+.link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 2px;
+}
+
+.highlighted {
+  stroke: var(--primary-color);
+  stroke-width: 3px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}

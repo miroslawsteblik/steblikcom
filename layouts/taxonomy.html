@@ -1,0 +1,20 @@
+{{ define "main" }}
+<div class="main-container taxonomy-container">
+  <header class="page-header">
+    <h1 class="page-title">{{ .Title }}</h1>
+    <div class="page-description">Browse posts by tags</div>
+  </header>
+  
+  <div class="tags-list">
+    {{ range .Pages }}
+      <div class="tag-item">
+        <h3 class="tag-title">
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          <span class="tag-count">({{ len .Pages }})</span>
+        </h3>
+        <div class="tag-description">{{ len .Pages }} post{{ if ne (len .Pages) 1 }}s{{ end }}</div>
+      </div>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

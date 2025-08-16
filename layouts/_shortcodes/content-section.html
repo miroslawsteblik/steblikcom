@@ -1,0 +1,9 @@
+<section class="content-section {{ .Get "class" | default "" }}">
+  {{ if .Get "title" }}
+  <h2 class="section-title">{{ .Get "title" }}</h2>
+  {{ end }}
+  
+  <div class="section-content">
+    {{ .Inner }}
+  </div>
+</section>

@@ -1,0 +1,32 @@
+{{- /* Load CSS files in order */ -}} {{- range $file := slice
+"base/reset.css"
+"base/variables.css"
+"base/typography.css"
+"layout/main.css"
+"layout/header.css"
+"layout/footer.css"
+"components/buttons.css"
+"components/navigation.css"
+"components/socials.css"
+"components/tags.css"
+"components/blog.css"
+"components/code.css"
+"components/goat.css"
+"components/viz.css"
+"pages/home.css"
+"pages/about.css"
+"pages/posts.css"
+"responsive/desktop.css"
+"responsive/mobile.css"
+"dark-mode-fixes.css"
+"mobile-nav-fixes.css" }} {{- with resources.Get (printf
+"css/%s" $file) }} {{- if hugo.IsDevelopment }}
+<link rel="stylesheet" href="{{ .RelPermalink }}" />
+{{- else }} {{- with . | minify | fingerprint }}
+<link
+  rel="stylesheet"
+  href="{{ .RelPermalink }}"
+  integrity="{{ .Data.Integrity }}"
+  crossorigin="anonymous"
+/>
+{{- end }} {{- end }} {{- end }} {{- end }}

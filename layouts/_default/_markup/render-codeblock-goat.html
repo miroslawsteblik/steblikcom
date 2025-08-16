@@ -1,0 +1,17 @@
+{{- $result := diagrams.Goat .Inner -}}
+
+<div class="goat-container {{ .Attributes.class | default "default" }}">
+  {{- if .Attributes.title -}}
+    <div class="goat-title">{{ .Attributes.title }}</div>
+  {{- end -}}
+
+  <div class="goat-diagram"
+       {{- with .Attributes.id }} id="{{ . }}"{{ end -}}
+       {{- if .Attributes.width }} style="max-width: {{ .Attributes.width }};"{{ end }}>
+    {{- $result.Wrapped | safeHTML -}}
+  </div>
+
+  {{- if .Attributes.caption -}}
+    <div class="goat-caption">{{ .Attributes.caption | markdownify }}</div>
+  {{- end -}}
+</div>

@@ -1,0 +1,7 @@
+{{ $content := . }}
+{{ with $.Page }}
+  {{ $content := $content | .RenderString }}
+  {{ return $content }}
+{{ else }}
+  {{ return $content }}
+{{ end }}

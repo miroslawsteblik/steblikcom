@@ -1,0 +1,68 @@
+/**
+ * Mobile navigation fixes and enhancements
+ */
+
+/* Mobile nav link and list item styles */
+@media (max-width: 768px) {
+  /* Ensure mobile nav menu has proper spacing */
+  .main-navigation nav ul {
+    padding: 0;
+    margin: 0;
+  }
+
+  .main-navigation nav ul li {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Ensure no button styling for nav links */
+  .main-navigation nav ul li a {
+    border: none !important;
+    background: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    min-width: auto !important;
+    padding: 0.8rem 0;
+    margin: 0;
+    text-align: left;
+    justify-content: flex-start;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+    width: 100%;
+  }
+
+  /* Active and hover states for mobile */
+  .main-navigation nav ul li a:hover,
+  .main-navigation nav ul li a.active {
+    background: none !important;
+    box-shadow: none !important;
+    transform: translateX(8px);
+    color: white;
+  }
+
+  /* Underline effect for mobile navigation */
+  .main-navigation nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0.5rem;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease;
+    transform: none;
+  }
+
+  .main-navigation nav ul li a:hover::after,
+  .main-navigation nav ul li a.active::after {
+    width: 30px;
+    left: 0;
+  }
+
+  /* Remove any scaling effects */
+  .main-navigation nav ul li a:hover,
+  .main-navigation nav ul li a.active {
+    transform: translateX(8px) !important;
+    scale: 1 !important;
+  }
+}

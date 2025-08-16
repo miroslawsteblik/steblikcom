@@ -6,3 +6,5 @@
 # Private documentation (optional)
 MAINTENANCE.md
 DEVNOTES.md
+
+.prettierrc
