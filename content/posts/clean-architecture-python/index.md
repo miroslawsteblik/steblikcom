@@ -1,7 +1,7 @@
 ---
 author : "Miroslaw Steblik"
 date: 2025-08-16
-title: "Hexagonal Arcitecture in Python"
+title: "Hexagonal Architecture in Python"
 description: "Ports, Adapters, Application and Domain"
 
 card_image: "/images/logo_python.jpeg"
