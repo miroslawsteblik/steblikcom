@@ -1,7 +1,7 @@
 ---
 title: "Miroslaw Steblik – Data Engineering"
 featured_image: '/images/banner_pipeline.jpeg'
-card_image: '/images/miroslaw_steblik_head_small.jpg'
+card_image: "/images/logo_python.jpeg"
 description: "Python developer specializing in financial applications, clean architecture, and maintainable code. Building robust API and data systems."
 ---
 
