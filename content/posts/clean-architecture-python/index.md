@@ -3,12 +3,10 @@ author : "Miroslaw Steblik"
 date: 2025-08-16
 title: "Hexagonal Architecture in Python"
 description: "Ports, Adapters, Application and Domain"
-
 card_image: "/images/logo_python.jpeg"
 tags: ["python", "clean architecture", "api"]
 show_reading_time: true
-draft : false
-mermaid: true
+
 ---
 
 ## Table of Contents
