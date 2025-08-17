@@ -41,7 +41,7 @@
   content="{{ with .Description }}{{ . }}{{ else }}{{ if .IsPage }}{{ .Summary }}{{ else }}{{ with site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}"
 />
 <meta name="author" content="Miroslaw Steblik" />
-<meta name="keywords" content="data engineering, SQL, Python, PostgreSQL, dbt, analytics, financial services, Bloomberg, Mercer" />
+<meta name="keywords" content="data engineering, SQL, Python, PostgreSQL, dbt, analytics, financial services, Go" />
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="{{ .Permalink }}" />
 
@@ -55,18 +55,18 @@
 <meta name="classification" content="Business, Technology, Professional" />
 <meta name="subject" content="Data Engineering and Analytics" />
 
-<!-- Open Graph / Facebook -->
+<!-- Open Graph  -->
 <meta property="og:title" content="{{ .Title }}" />
-<meta property="og:description" content="{{ .Summary }}" />
+<meta property="og:description" content="{{ .Description  }}" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="{{ .Permalink }}" />
 <meta property="og:image" content="{{ .Params.card_image | absURL }}" />
+<meta property="og:site_name" content="{{ .Site.Title }}" />
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:url" content="{{ .Permalink }}" />
-<meta name="twitter:title" content="{{ if .IsHome }}{{ site.Title }}{{ else }}{{
-printf "%s | %s" .Title site.Title }}{{ end }}">
+<meta name="twitter:title" content="{{ .Title }}" />
 <meta
   name="twitter:description"
   content="{{ with .Description }}{{ . }}{{ else }}{{ if .IsPage }}{{ .Summary }}{{ else }}{{ with site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}"

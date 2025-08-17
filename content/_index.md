@@ -1,9 +1,11 @@
 ---
 title: "Home"
 featured_image: '/images/banner_pipeline.jpeg'
+card_image: "/images/miroslaw_steblik_head.png"
+description: "Python developer specializing in financial applications, clean architecture, and maintainable code. Building robust API and data systems."
 ---
 
-# 
+#
 
 {{< profile-card image="/images/miroslaw_steblik_head.png" alt="Professional headshot of Miroslaw Steblik" >}}
 👋 Hello! I'm Miroslaw Steblik, a data engineer with 7 years of experience in designing and implementing data infrastructure, ETL pipelines, and analytics solutions.
@@ -35,7 +37,6 @@ featured_image: '/images/banner_pipeline.jpeg'
 {{< tag url="/tags/informatica" >}}Informatica{{< /tag >}}
 {{< tag url="/tags/data-modeling" >}}Data Modeling{{< /tag >}}
 {{< tag url="/tags/dbt" >}}dbt{{< /tag >}}
-{{< tag url="/tags/beam" >}}Beam{{< /tag >}}
 {{< /expertise-category >}}
 
 {{< expertise-category title="Databases" >}}
