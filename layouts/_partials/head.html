@@ -56,25 +56,21 @@
 <meta name="subject" content="Data Engineering and Analytics" />
 
 <!-- Open Graph  -->
+ {{ $cardImage := .Params.card_image | default (index .Params.images 0) | default "/images/banner_pipeline.jpeg" }}
+ 
 <meta property="og:title" content="{{ .Title }}" />
-<meta property="og:description" content="{{ .Description  }}" />
+<meta property="og:description" content="{{ .Description | default .Site.Params.description }}"  />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="{{ .Permalink }}" />
-<meta property="og:image" content="{{ .Params.card_image | absURL }}" />
+<meta property="og:image" content="{{ $cardImage | absURL }}" />
 <meta property="og:site_name" content="{{ .Site.Title }}" />
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:url" content="{{ .Permalink }}" />
 <meta name="twitter:title" content="{{ .Title }}" />
-<meta
-  name="twitter:description"
-  content="{{ with .Description }}{{ . }}{{ else }}{{ if .IsPage }}{{ .Summary }}{{ else }}{{ with site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}"
-/>
-{{ with .Params.featured_image }}<meta
-  name="twitter:image"
-  content="{{ . | absURL }}"
-/>{{ end }}
+<meta name="twitter:description" content="{{ .Description | default .Site.Params.description }}" />
+<meta name="twitter:image" content="{{ $cardImage | absURL }}" />
 
 <!-- CSS -->
 {{ partialCached "css.html" . }}
