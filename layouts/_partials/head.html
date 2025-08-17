@@ -31,15 +31,11 @@
 <meta name="theme-color" content="#ffffff" />
 
 <title>
-  {{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title
-  site.Title }}{{ end }}
+  {{ site.Title }}
 </title>
 
 <!-- SEO Meta Tags -->
-<meta
-  name="description"
-  content="{{ with .Description }}{{ . }}{{ else }}{{ if .IsPage }}{{ .Summary }}{{ else }}{{ with site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}"
-/>
+<meta name="description" content="{{ .Description | default .Site.Params.description }}"/>
 <meta name="author" content="Miroslaw Steblik" />
 <meta name="keywords" content="data engineering, SQL, Python, PostgreSQL, dbt, analytics, financial services, Go" />
 <meta name="robots" content="index, follow" />
@@ -56,8 +52,8 @@
 <meta name="subject" content="Data Engineering and Analytics" />
 
 <!-- Open Graph  -->
- {{ $cardImage := .Params.card_image | default (index .Params.images 0) | default "/images/banner_pipeline.jpeg" }}
- 
+ {{ $cardImage := .Params.card_image | default (index .Site.Params.ogImage 0) | default "/images/banner_pipeline.jpeg" }}
+
 <meta property="og:title" content="{{ .Title }}" />
 <meta property="og:description" content="{{ .Description | default .Site.Params.description }}"  />
 <meta property="og:type" content="article" />
@@ -66,7 +62,6 @@
 <meta property="og:site_name" content="{{ .Site.Title }}" />
 
 <!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:url" content="{{ .Permalink }}" />
 <meta name="twitter:title" content="{{ .Title }}" />
 <meta name="twitter:description" content="{{ .Description | default .Site.Params.description }}" />

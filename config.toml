@@ -7,6 +7,9 @@ title = 'Miroslaw Steblik'
 [params]
   bannerImage = '/images/banner_pipeline.jpeg'
   postsPerPage = 6 # Controls how many posts are displayed per page
+  ogImagine = '/images/miroslaw_steblik_head_small.jpg'
+  ogImageAltAbout = "Photo of Miroslaw Steblik"
+  ogImageDescriptionAbout = "Python developer specializing in financial applications, clean architecture, and maintainable code. Building robust API and data systems."
 
   # Enable/disable features
   enableHighlights = true
